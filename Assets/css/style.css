@@ -1,0 +1,33 @@
+* {
+  font-family: "Poppins";
+  background-color: var(--background-color-linen);
+  color: var(--heading-text-color-storm);
+}
+
+/* Storm: #565c5e | Forest Green: #455954 | Leather: #9d7463 | Blue: #b5c2c7 | Linen: #dfdbd8 */
+:root {
+  --background-color-linen: #dfdbd8;
+  --heading-text-color-storm: #565c5e;
+  --header-background-color-blue: #b5c2c7;
+  --forest-green: #455954;
+  --leather: #9d7463;
+}
+
+.header-title {
+  font-size: 3.5em;
+  text-align: center;
+  color: var(--forest-green);
+}
+
+header {
+  text-align: center;
+  padding: 40px;
+}
+
+button {
+  padding: 10px;
+  border-radius: 5px 0px 5px 0px;
+  color: var(--leather);
+  cursor: pointer;
+  font-size: 2em;
+}
