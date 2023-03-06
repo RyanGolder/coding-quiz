@@ -2,6 +2,7 @@
   font-family: "Poppins";
   background-color: var(--background-color-linen);
   color: var(--heading-text-color-storm);
+  box-sizing: border-box;
 }
 
 /* Storm: #565c5e | Forest Green: #455954 | Leather: #9d7463 | Blue: #b5c2c7 | Linen: #dfdbd8 */
@@ -24,10 +25,38 @@ header {
   padding: 40px;
 }
 
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: flex-start;
+  background: linear-gradient(0deg, #455954 0%, #dfdbd8 63%);
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+section {
+  flex: 0 auto;
+  padding: 8px;
+  margin-top: 50px;
+  background-color: var(--heading-text-color-storm);
+  border-radius: 8px;
+}
+
 button {
   padding: 10px;
   border-radius: 5px 0px 5px 0px;
   color: var(--leather);
   cursor: pointer;
   font-size: 2em;
+}
+
+.large-font {
+  font-size: 3.5em;
+  text-align:center;
 }
