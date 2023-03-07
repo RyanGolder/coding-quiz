@@ -58,5 +58,17 @@ button {
 
 .large-font {
   font-size: 3.5em;
-  text-align:center;
+  text-align: center;
+}
+
+.option-button {
+  padding: 5px;
+  border-radius: 5px;
+  color: var(--heading-text-color-storm);
+  cursor: pointer;
+  font-size: small;
+}
+
+.card-quiz {
+  display: none;
 }
