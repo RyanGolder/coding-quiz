@@ -31,18 +31,24 @@
 
 // startButton.addEventListener("click", countdown);
 
+// Selectors
 var startButton = document.querySelector(".start-button");
 var timerElement = document.querySelector(".timer-count");
 var questionText = document.querySelector(".question-text");
 var options = document.querySelectorAll(".option-button");
 var showQuizCard = document.querySelector(".card-quiz");
-var timerInterval = null;
+
+// Fun Variables
+var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+var timerInterval;
 var currentQuestion = 0;
 var score = 0;
+var timeLeft = 30;
+
 
 // Displays the hidden question card
 function showSection() {
-  showQuizCard.style.display = 'block';
+  showQuizCard.style.display = "flex";
 }
 
 // Show the current question
@@ -57,11 +63,10 @@ function showQuestion() {
 // Check the user's answer and update the timer if necessary
 function checkAnswer() {
   if (this.textContent === questions[currentQuestion].correctAnswer) {
-    alert('Correct!');
+    alert("Correct!");
     score++;
   } else {
-    alert('Incorrect!');
-    var timeLeft = parseInt(timerElement.textContent);
+    alert("Incorrect!");
     timeLeft -= 10;
     if (timeLeft < 0) {
       timeLeft = 0;
@@ -74,34 +79,19 @@ function checkAnswer() {
   if (currentQuestion < questions.length) {
     showQuestion();
   } else {
-    clearInterval(timerInterval);
-    timerInterval = null; // Reset the timer interval variable
-    alert('Your score is: ' + score);
-    var initials = prompt('Enter your initials:');
-    // Save the score and initials to local storage
-    localStorage.setItem('highscore', score);
-    localStorage.setItem('initials', initials);
+    endGame();
   }
 }
 
 // Countdown Function when start button is hit
 function countdown() {
-  if (timerInterval !== null) {
-    // A timer is already running, so don't start a new one
-    return;
-  }
-
-  var timeLeft = 30;
-
   timerInterval = setInterval(function () {
-    if (timeLeft > 0) {
-      timerElement.textContent = timeLeft;
-      timeLeft--;
-    } else {
-      timerElement.textContent = '0';
-      clearInterval(timerInterval);
-      timerInterval = null; // Reset the timer interval variable
-      alert('Time\'s up!');
+    timerElement.textContent = timeLeft;
+    timeLeft--;
+
+    if (timeLeft <= 0) {
+      endGame();
+      alert("Time's up!");
     }
   }, 1000);
   showQuestion();
@@ -109,7 +99,26 @@ function countdown() {
 
 // Add event listeners for the start button and options
 startButton.addEventListener("click", countdown);
+
 for (var i = 0; i < options.length; i++) {
   options[i].addEventListener("click", checkAnswer);
 }
 
+function endGame() {
+  timerElement.textContent = "0";
+  clearInterval(timerInterval);
+
+  alert("Your score is: " + score);
+  var initials = prompt("Enter your initials:");
+  // Save the score and initials to local storage
+  var newPerson = {
+    initials,
+    score
+  }
+
+  highScores.push(newPerson)
+  localStorage.setItem("highScores", JSON.stringify(highScores));
+
+// Allows the quiz to start again without needing to refresh the page
+  location.reload()
+}

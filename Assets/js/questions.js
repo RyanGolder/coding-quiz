@@ -7,12 +7,12 @@ const questions = [
   },
   {
     question:
-      "How many days did it take Brandan Eich to develop the scripting language now known as JavaScript?",
+      "How many days did it to develop JavaScript?",
     options: ["486", "5016", "78", "10"],
     correctAnswer: "10",
   },
   {
-    question: "What from the following isn't used in declaring a variable?",
+    question: "What isn't used in declaring a variable?",
     options: ["const", "let", "var", "variable-declare"],
     correctAnswer: "variable-declare",
   },

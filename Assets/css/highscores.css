@@ -1,0 +1,66 @@
+* {
+    font-family: "Poppins";
+    color: var(--heading-text-color-storm);
+    box-sizing: border-box;
+  }
+
+  /* Storm: #565c5e | Forest Green: #455954 | Leather: #9d7463 | Blue: #b5c2c7 | Linen: #dfdbd8 */
+:root {
+    --background-color-linen: #dfdbd8;
+    --heading-text-color-storm: #565c5e;
+    --header-background-color-blue: #b5c2c7;
+    --forest-green: #455954;
+    --leather: #9d7463;
+  }
+
+  .header-title {
+    font-size: 60px;
+    text-align: center;
+    color: var(--forest-green);
+  }
+
+  header {
+    text-align: center;
+    padding: 40px;
+  }
+
+  body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: flex-start;
+    background: linear-gradient(0deg, #dfdbd8 0%, #b5c2c7 63%);
+  }
+
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  
+  }
+  
+  section {
+    flex: 0 auto;
+    padding: 8px;
+    margin-top: 50px;
+    border-radius: 8px;
+  }
+
+  button {
+    padding: 10px;
+    border-radius: 5px 0px 5px 0px;
+    cursor: pointer;
+    font-size: 18px;
+    background-color: var(--background-color-linen);
+  }
+
+  .return-button a {
+    padding: 10px;
+    border-radius: 5px 0px 5px 0px;
+    color: var(--leather);
+    cursor: pointer;
+    font-size: 18px;
+    text-decoration: none;
+  }

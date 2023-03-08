@@ -1,6 +1,5 @@
 * {
   font-family: "Poppins";
-  background-color: var(--background-color-linen);
   color: var(--heading-text-color-storm);
   box-sizing: border-box;
 }
@@ -15,7 +14,7 @@
 }
 
 .header-title {
-  font-size: 3.5em;
+  font-size: 60px;
   text-align: center;
   color: var(--forest-green);
 }
@@ -31,20 +30,20 @@ body {
   flex-direction: column;
   min-height: 100vh;
   justify-content: flex-start;
-  background: linear-gradient(0deg, #455954 0%, #dfdbd8 63%);
+  background: linear-gradient(0deg, #dfdbd8 0%, #b5c2c7 63%);
 }
 
 main {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+
 }
 
 section {
   flex: 0 auto;
   padding: 8px;
   margin-top: 50px;
-  background-color: var(--heading-text-color-storm);
   border-radius: 8px;
 }
 
@@ -53,7 +52,8 @@ button {
   border-radius: 5px 0px 5px 0px;
   color: var(--leather);
   cursor: pointer;
-  font-size: 2em;
+  font-size: 18px;
+  background-color: var(--background-color-linen);
 }
 
 .large-font {
@@ -71,4 +71,17 @@ button {
 
 .card-quiz {
   display: none;
+  flex-direction: column;
+  padding: 10px;
+  margin: auto;
+  justify-content:space-around;
+}
+
+.highscore-button a {
+  padding: 10px;
+  border-radius: 5px 0px 5px 0px;
+  color: var(--leather);
+  cursor: pointer;
+  font-size: 18px;
+  text-decoration: none;
 }
